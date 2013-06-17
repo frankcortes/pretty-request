@@ -1,0 +1,14 @@
+{
+    "name": "PrettyRequest",
+    "version": "0.0.1",
+    "description": "a HTTPRequest Beautifier Tool",
+    "author": "Frank Cortes <franklyn.bdn@gmail.com>",
+    "dependencies": {
+        "grunt": "~0.4.0",
+        "grunt-contrib-coffee": "~0.6.0",
+        "grunt-contrib-watch": "~0.3.1",
+        "grunt-contrib-less": "~0.5.0",
+        "grunt-contrib-clean": "~0.4.0",
+        "grunt-contrib-connect": "~0.2.0"
+    }
+}
