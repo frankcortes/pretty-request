@@ -3,11 +3,19 @@ body {
   height: 100%;
 }
 .pure-g {
+  background-color: #F0F8FF;
   height: 100%;
 }
 .pure-g .question {
+  transition: width 2s ease 0s;
   background-color: #FFF;
   height: 100%;
+}
+.pure-g .question.pure-u-1 {
+  width: 100%;
+}
+.pure-g .question.pure-u-2 {
+  width: 50%;
 }
 .pure-g .question textarea {
   background-color: #EEE;
@@ -65,4 +73,7 @@ body {
 .pure-g .response .fk-result .pure-table thead {
   font-size: 1.25em;
   background-color: transparent;
+}
+.pure-g .response.hidden {
+  display: none;
 }

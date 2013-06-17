@@ -1,5 +1,5 @@
 <div class="pure-g">
-	<div class="pure-u-2-5 question">
+	<div class="{{#unless firstTimeUsed}} pure-u-1-2{{else}} pure-u-1{{/unless}} question">
 		<div class="fk-container">
 			<h1>PrettyRequest</h1>
 			<h2>A HTTP Request Beautifier</h2>
@@ -9,7 +9,8 @@
 			<span id="other-options"> A <a href="#example" class="link">random example of use, </a> and <a href="#why" class="link">the reason about this.</a></span>
 		</div>
 	</div>
-	<div class="pure-u-3-5 response">
+	{{#if params}}
+	<div class="pure-u-1-2 response {{#if firstTimeUsed}}hidden{{/if}}">
 		<div class="fk-container">
 			{{#if params}}
 				<div class="fk-result fine">
@@ -34,4 +35,5 @@
 			{{/if}}
 		</div>
 	</div>
+	{{/if}}
 </div>

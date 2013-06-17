@@ -4,8 +4,17 @@ html, body
 }
 
 .pure-g{
+	background-color: #F0F8FF;
 	height: 100%;
 	.question {
+		//Really nice animation!
+		&.pure-u-1 {
+			width: 100%;
+		}
+		&.pure-u-2 {
+			width: 50%;
+		}
+		transition: width 2s ease 0s;
 		background-color: #FFF;
 		height: 100%;
 		textarea {
@@ -66,6 +75,9 @@ html, body
 					background-color: transparent;
 				}
 			}
+		}
+		&.hidden {
+			display:none;
 		}
 	}
 }

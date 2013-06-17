@@ -16,6 +16,8 @@
 
       MainView.prototype.model = new headerModel();
 
+      MainView.prototype.firstTimeUsed = true;
+
       MainView.prototype.events = {
         "click #beautify": "beautifyTextarea"
       };
@@ -27,7 +29,28 @@
       };
 
       MainView.prototype.render = function() {
-        return $(this.$el).html(mainTmpl(this.model.attributes));
+        $(this.$el).html(mainTmpl(this.serializeData()));
+        if (this.model.has("params") && this.firstTimeUsed) {
+          this.startAnimation();
+          return this.firstTimeUsed = false;
+        }
+      };
+
+      MainView.prototype.serializeData = function() {
+        return _.extend({}, this.model.attributes, {
+          "firstTimeUsed": this.firstTimeUsed
+        });
+      };
+
+      MainView.prototype.startAnimation = function() {
+        if ($(".question").hasClass("pure-u-1")) {
+          setInterval(function() {
+            return $(".response").removeClass("hidden");
+          }, 2350);
+          return setInterval(function() {
+            return $(".question").removeClass("pure-u-1").addClass("pure-u-1-2");
+          }, 300);
+        }
       };
 
       MainView.prototype.beautifyTextarea = function(evt) {
