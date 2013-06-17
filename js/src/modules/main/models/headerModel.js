@@ -12,9 +12,7 @@
         return _ref;
       }
 
-      headerModel.prototype.defaults = {
-        metters: 250
-      };
+      headerModel.prototype.sync = function() {};
 
       return headerModel;
 

@@ -4,13 +4,34 @@
 			<h1>PrettyRequest</h1>
 			<h2>A HTTP Request Beautifier</h2>
 			<hr />
-			<textarea id="textarea-request" placeholder="Enter a GET Request..."></textarea>
+			<textarea id="textarea-request" placeholder="Enter a GET Request...">{{content}}</textarea>
 			<a id="beautify" class="pure-button pure-button-primary" href="#">Beautify!</a>
-			<span id="other-options"> An <a href="#example" class="link">example of use, </a> and <a href="#why" class="link">the reason about this.</a></span>
+			<span id="other-options"> A <a href="#example" class="link">random example of use, </a> and <a href="#why" class="link">the reason about this.</a></span>
 		</div>
 	</div>
 	<div class="pure-u-3-5 response">
 		<div class="fk-container">
+			{{#if params}}
+				<div class="fk-result fine">
+					<table class="pure-table">
+    					<thead>
+        					<tr>
+            					<th>Name</th>
+            					<th>Value</th>
+            				</tr>
+            			</thead>
+            			<tbody>
+							{{#each params}}
+							<tr>
+								<td>{{name}}</td>
+								<td>{{formatter value}}</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+					</ul>
+				</div>
+			{{/if}}
 		</div>
 	</div>
 </div>

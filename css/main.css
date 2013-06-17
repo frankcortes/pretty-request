@@ -56,3 +56,13 @@ body {
   background-color: #F0F8FF;
   height: 100%;
 }
+.pure-g .response .fk-result.fine {
+  margin: 7.5em 1.9em;
+}
+.pure-g .response .fk-result .pure-table {
+  border: none;
+}
+.pure-g .response .fk-result .pure-table thead {
+  font-size: 1.25em;
+  background-color: transparent;
+}
