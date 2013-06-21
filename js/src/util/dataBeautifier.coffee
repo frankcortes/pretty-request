@@ -29,8 +29,8 @@ define(["Handlebars", "underscore"], ( Handlebars, _ )->
 			[name, value] = parameter.split "="
 			name = name.slice 1
 			return {
-				name: name
-				value: value
+				name: decodeURIComponent name
+				value: decodeURIComponent value
 			}
 		, this)
 		

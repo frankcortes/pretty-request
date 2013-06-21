@@ -2,7 +2,7 @@
   define(["Handlebars", "underscore"], function(Handlebars, _) {
     return Handlebars.registerHelper("formatter", function(value) {
       var formatterTmpl, params;
-      formatterTmpl = Handlebars.compile("<span class=\"{{type}}\">{{value}}</span>");
+      formatterTmpl = Handlebars.compile("<span class=\"formatter {{type}}\">{{value}}</span>");
       params = {
         value: value,
         type: "formatter-normal"
@@ -17,6 +17,7 @@
         params.type = "formatter-undefined";
       } else if (_.isString(value)) {
         params.type = "formatter-string";
+        params.value = "\"" + value + "\"";
       }
       return new Handlebars.SafeString(formatterTmpl(params));
     });

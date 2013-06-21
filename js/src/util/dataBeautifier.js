@@ -18,8 +18,8 @@
         _ref = parameter.split("="), name = _ref[0], value = _ref[1];
         name = name.slice(1);
         return {
-          name: name,
-          value: value
+          name: decodeURIComponent(name),
+          value: decodeURIComponent(value)
         };
       }, this);
     };
