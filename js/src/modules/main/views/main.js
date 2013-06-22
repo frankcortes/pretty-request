@@ -14,7 +14,7 @@
 
       MainView.prototype.el = "body";
 
-      MainView.prototype.model = new headerModel();
+      MainView.prototype.model = headerModel;
 
       MainView.prototype.firstTimeUsed = true;
 
@@ -29,6 +29,7 @@
       };
 
       MainView.prototype.render = function() {
+        this.randomExample = Math.floor(Math.random() * 10000000);
         $(this.$el).html(mainTmpl(this.serializeData()));
         if (this.model.has("params") && this.firstTimeUsed) {
           this.startAnimation();
@@ -38,7 +39,8 @@
 
       MainView.prototype.serializeData = function() {
         return _.extend({}, this.model.attributes, {
-          "firstTimeUsed": this.firstTimeUsed
+          "firstTimeUsed": this.firstTimeUsed,
+          "randomExample": this.randomExample
         });
       };
 

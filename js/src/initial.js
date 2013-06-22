@@ -1,8 +1,10 @@
 (function() {
-  define(["main", "jQuery"], function(mainView, $) {
+  define(["main", "mainRouter", "Backbone", "jQuery"], function(mainView, mainRouter, Backbone, $) {
     return $(function() {
       'use strict';
-      return new mainView();
+      new mainView();
+      new mainRouter();
+      return Backbone.history.start();
     });
   });
 

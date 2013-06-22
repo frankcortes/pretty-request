@@ -4,7 +4,7 @@
 
   define(["Backbone"], function(Backbone) {
     var headerModel, _ref;
-    return headerModel = (function(_super) {
+    headerModel = (function(_super) {
       __extends(headerModel, _super);
 
       function headerModel() {
@@ -17,6 +17,7 @@
       return headerModel;
 
     })(Backbone.Model);
+    return new headerModel();
   });
 
 }).call(this);

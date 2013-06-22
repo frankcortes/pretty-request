@@ -4,4 +4,7 @@ define(["Backbone"], (Backbone)->
 		#The method sync has been deleted to syncronize with nothing
 		sync: ()->
 			return
+
+	#returns an unique instance for this model
+	new headerModel()
 )

@@ -9,7 +9,8 @@ requirejs.config({
 		"hbs": "lib/hbs",
 		//Modules and starting
 		"initial": "src/initial",
-		"main": "src/modules/main/views/main"
+		"main": "src/modules/main/views/main",
+		"mainRouter": "src/router"
 	},
 	shim : {
 		"Backbone": {

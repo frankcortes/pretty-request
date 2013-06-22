@@ -11,7 +11,7 @@ define(["Backbone",
 		#The element is directly the body
 		el:"body"
 		#The model where we are saving the info
-		model: new headerModel()
+		model: headerModel
 		#if it is the first time used, useful by initial animation
 		firstTimeUsed: true
 		#Events when click
@@ -26,6 +26,7 @@ define(["Backbone",
 			@render()
 		#render the view with parameters
 		render: ()->
+			@randomExample = Math.floor(Math.random() * 10000000) 
 			$( @$el ).html mainTmpl @serializeData()
 			#start the animation the first time you send correct params.
 			if @model.has("params") and @firstTimeUsed
@@ -33,7 +34,7 @@ define(["Backbone",
 				@firstTimeUsed = false
 		#function to serialize the information sending to the view
 		serializeData: ()->
-			_.extend({}, @model.attributes, { "firstTimeUsed": @firstTimeUsed })
+			_.extend({}, @model.attributes, { "firstTimeUsed": @firstTimeUsed, "randomExample": @randomExample })
 		#if any, start animation with class
 		startAnimation: ()->
 			#animation if question is not pure-u-1 is not needed
