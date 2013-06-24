@@ -4,7 +4,8 @@ define(["Backbone",
 	"jQuery",
 	"underscore",
 	"hbs!modules/main/templates/main",
-	"src/util/formatter"
+	"src/util/formatter",
+	"boostrapModal"
 	], (Backbone, headerModel, beautifier, $, _, mainTmpl)->
 	#A simple backbone view that shows the main page.
 	class MainView extends Backbone.View
@@ -44,7 +45,7 @@ define(["Backbone",
 			if $(".question").hasClass("pure-u-1")
 				setInterval(
 					()->
-						$(".response").removeClass("hidden")
+						$(".response").removeClass("hide")
 						#after first time, remove the transition
 						$(".question").css("transition","none")
 					2350 #2 seconds in the animation plus the retard to add and remove class

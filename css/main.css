@@ -2,6 +2,19 @@ html,
 body {
   height: 100%;
 }
+.hide {
+  display: none;
+}
+.fade {
+  transition: opacity 0.15s linear 0s;
+}
+.modal-header h2 {
+  color: #4B4B4B;
+  font-weight: bolder !important;
+}
+.modal-body {
+  line-height: 1.3em;
+}
 .pure-g-r {
   background-color: #ecf5fc;
   height: 100%;
@@ -53,6 +66,7 @@ body {
 .pure-g-r .question #beautify {
   text-align: center;
   font-size: 125%;
+  margin-right: 2%;
 }
 .pure-g-r .question .link {
   text-decoration: none;
@@ -85,9 +99,6 @@ body {
 .pure-g-r .response .fk-result .pure-table thead {
   font-size: 1.25em;
   background-color: transparent;
-}
-.pure-g-r .response.hidden {
-  display: none;
 }
 .pure-g-r .formatter {
   font-family: monospace;

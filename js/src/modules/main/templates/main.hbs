@@ -1,3 +1,4 @@
+<a href="https://github.com/frankcortes/pretty-request"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 <div class="pure-g-r">
 	<div class="{{#unless firstTimeUsed}} pure-u-1-2{{else}} pure-u-1{{/unless}} question">
 		<div class="fk-container">
@@ -7,12 +8,35 @@
 			<textarea id="textarea-request" placeholder="Enter a GET Request...">{{content}}</textarea>
 			<span id="other-options">
 				<a id="beautify" class="pure-button pure-button-primary" href="javascript:void(0)">Beautify!</a>
-				A <a href="#example/{{randomExample}}" class="link">random example of use, </a> and <a href="#why" class="link">the reason behind this.</a>
+				A <a href="#example/{{randomExample}}" class="link">random example of use, </a> and <a href="#why" class="link" role="button" data-toggle="modal">the reason behind this.</a>
+				<div id="why" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						<h2 id="myModalLabel">Why have I implemented PrettyRequest?</h2>
+					</div>
+					<div class="modal-body">
+						<p>HTTP requests are too many long often. PrettyRequest is a tiny online web tool to display the different parameters for these requests easier.
+							This web platform is hosted in Github, and it is using:
+							<ul>
+								<li>Vanilla <strong>BackboneJS</strong></li>
+								<li><strong>RequireJS</strong> as AMD loader</li>
+								<li><strong>Handlebars</strong> as template engine</li>
+								<li><strong>Zepto</strong></li>
+								<li><strong>Coffeescript</strong></li>
+								<li><strong>Pure CSS</strong>, combined with Bootstrap Model.</li>
+								<li><strong>Grunt</strong> as task runner.</li> 
+							</ul>
+							Pull Requests and suggestions are welcome. Enjoy using it!
+						</p>
+					</div>
+					<div class="modal-footer">
+						<a class="pure-button pure-button-primary" data-dismiss="modal" aria-hidden="true">Back</a>
+					</div>
+				</div>
 			</span>
 		</div>
 	</div>
 	{{#if params}}
-	<div class="pure-u-1-2 response {{#if firstTimeUsed}}hidden{{/if}}">
+	<div class="pure-u-1-2 response {{#if firstTimeUsed}}hide{{/if}}">
 		<div class="fk-container">
 			{{#if params}}
 				<div class="fk-result fine">

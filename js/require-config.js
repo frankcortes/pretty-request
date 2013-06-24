@@ -5,12 +5,14 @@ requirejs.config({
 		"Handlebars": "lib/Handlebars",
 		"Backbone": "lib/backbone",
 		"underscore": "lib/lodash",
-		"jQuery": "lib/zepto",
+		"zepto": "lib/zepto",
+		"zeptoData": "lib/zepto-data",
 		"hbs": "lib/hbs",
 		//Modules and starting
 		"initial": "src/initial",
 		"main": "src/modules/main/views/main",
-		"mainRouter": "src/router"
+		"mainRouter": "src/router",
+		"boostrapModal": "lib/bootstrap-modal/js/bootstrap"
 	},
 	shim : {
 		"Backbone": {
@@ -20,13 +22,21 @@ requirejs.config({
 		"underscore": {
 			exports: "_"
 		},
-		"jQuery": {
+		"zepto": {
 			exports: "Zepto"
+		},
+		"zeptoData": {
+			deps: ["zepto"],
+			exports: "Zepto"
+		},
+		"boostrapModal": {
+			deps: ["jQuery"]
 		}
 	},
 	map: {
 		"*": {
-			"modules": "src/modules"
+			"modules": "src/modules",
+			"jQuery": "zeptoData"
 		}
 	},
 	hbs: {

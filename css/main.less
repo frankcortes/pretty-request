@@ -3,6 +3,23 @@ html, body
     height: 100%;
 }
 
+//special classes, compatibility with bootstrap model
+.hide {
+	display: none;
+}
+.fade {
+	transition: opacity 0.15s linear 0s;
+}
+.modal-header {
+	h2 {
+		color: #4B4B4B;
+		font-weight: bolder !important;
+	}
+}
+.modal-body {
+	line-height: 1.3em;
+}
+
 .pure-g-r{
 	//background-color: #F0F8FF;
 	background-color: lighten(#3B98E1,40%);
@@ -54,6 +71,7 @@ html, body
 		#beautify {
 			text-align: center;
 			font-size: 125%;
+			margin-right: 2%;
 		}
 		.link {
 			text-decoration: none;
@@ -71,7 +89,6 @@ html, body
 		}
 	}
 	.response {
-		//background-color: #F0F8FF;
 		background-color: lighten(#3B98E1,40%);
 		min-height: 100%;
 		.fk-result {
@@ -90,9 +107,6 @@ html, body
 					background-color: transparent;
 				}
 			}
-		}
-		&.hidden {
-			display:none;
 		}
 	}
 	//Formatter for strings and values

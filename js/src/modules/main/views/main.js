@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["Backbone", "modules/main/models/headerModel", "src/util/dataBeautifier", "jQuery", "underscore", "hbs!modules/main/templates/main", "src/util/formatter"], function(Backbone, headerModel, beautifier, $, _, mainTmpl) {
+  define(["Backbone", "modules/main/models/headerModel", "src/util/dataBeautifier", "jQuery", "underscore", "hbs!modules/main/templates/main", "src/util/formatter", "boostrapModal"], function(Backbone, headerModel, beautifier, $, _, mainTmpl) {
     var MainView, _ref;
     return MainView = (function(_super) {
       __extends(MainView, _super);
@@ -49,7 +49,7 @@
       MainView.prototype.startAnimation = function() {
         if ($(".question").hasClass("pure-u-1")) {
           setInterval(function() {
-            $(".response").removeClass("hidden");
+            $(".response").removeClass("hide");
             return $(".question").css("transition", "none");
           }, 2350);
           return setInterval(function() {
