@@ -1,12 +1,14 @@
-<div class="pure-g">
+<div class="pure-g-r">
 	<div class="{{#unless firstTimeUsed}} pure-u-1-2{{else}} pure-u-1{{/unless}} question">
 		<div class="fk-container">
 			<h1>PrettyRequest</h1>
 			<h2>A HTTP Request Beautifier</h2>
 			<hr />
 			<textarea id="textarea-request" placeholder="Enter a GET Request...">{{content}}</textarea>
-			<a id="beautify" class="pure-button pure-button-primary" href="#">Beautify!</a>
-			<span id="other-options"> A <a href="#example/{{randomExample}}" class="link">random example of use, </a> and <a href="#why" class="link">the reason about this.</a></span>
+			<span id="other-options">
+				<a id="beautify" class="pure-button pure-button-primary" href="javascript:void(0)">Beautify!</a>
+				A <a href="#example/{{randomExample}}" class="link">random example of use, </a> and <a href="#why" class="link">the reason behind this.</a>
+			</span>
 		</div>
 	</div>
 	{{#if params}}

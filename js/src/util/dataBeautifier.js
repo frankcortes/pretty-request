@@ -13,15 +13,19 @@
       var parameters;
       text = _trim(text);
       parameters = _obtainParts(text);
-      return _.map(parameters, function(parameter) {
-        var name, value, _ref;
-        _ref = parameter.split("="), name = _ref[0], value = _ref[1];
-        name = name.slice(1);
-        return {
-          name: decodeURIComponent(name),
-          value: decodeURIComponent(value)
-        };
-      }, this);
+      if (parameters == null) {
+        return void 0;
+      } else {
+        return _.map(parameters, function(parameter) {
+          var name, value, _ref;
+          _ref = parameter.split("="), name = _ref[0], value = _ref[1];
+          name = name.slice(1);
+          return {
+            name: decodeURIComponent(name),
+            value: decodeURIComponent(value)
+          };
+        }, this);
+      }
     };
   });
 

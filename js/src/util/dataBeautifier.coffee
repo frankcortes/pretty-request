@@ -23,16 +23,19 @@ define(["Handlebars", "underscore"], ( Handlebars, _ )->
 	beautifier = (text)->
 		text = _trim text
 		parameters = _obtainParts text
-		#Returns an Array of parameters...
-		_.map( parameters, (parameter)->
-			#where each parameter is an object with name and value
-			[name, value] = parameter.split "="
-			name = name.slice 1
-			return {
-				name: decodeURIComponent name
-				value: decodeURIComponent value
-			}
-		, this)
-		
-
+		#if parameters didn't return any result, return undefined.
+		unless parameters?
+			undefined
+		else
+			#Returns an Array of parameters...
+			_.map( parameters, (parameter)->
+				#where each parameter is an object with name and value
+				[name, value] = parameter.split "="
+				name = name.slice 1
+				#save the decoding parameter
+				return {
+					name: decodeURIComponent name
+					value: decodeURIComponent value
+				}
+			, this)
 )

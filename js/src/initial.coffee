@@ -6,6 +6,7 @@ define(["main", "mainRouter", "Backbone", "jQuery"], (mainView, mainRouter, Back
         new mainView()
         #init the router
         new mainRouter()
+        #init Backbone History
         Backbone.history.start();
     )
 )

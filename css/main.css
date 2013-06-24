@@ -2,22 +2,22 @@ html,
 body {
   height: 100%;
 }
-.pure-g {
-  background-color: #c0def5;
+.pure-g-r {
+  background-color: #ecf5fc;
   height: 100%;
 }
-.pure-g .question {
+.pure-g-r .question {
   transition: width 2s ease 0s;
   background-color: #FFF;
   min-height: 100%;
 }
-.pure-g .question.pure-u-1 {
+.pure-g-r .question.pure-u-1 {
   width: 100%;
 }
-.pure-g .question.pure-u-2 {
+.pure-g-r .question.pure-u-2 {
   width: 50%;
 }
-.pure-g .question textarea {
+.pure-g-r .question textarea {
   background-color: #EEE;
   border: 1px solid #DDD;
   margin: 2%;
@@ -29,69 +29,81 @@ body {
   color: #AAA;
   font-weight: lighter;
 }
-.pure-g .question hr {
+.pure-g-r .question textarea.error {
+  background-color: #FFC0CB;
+  border: 1px solid #CD5C5C;
+  color: #CD5C5C;
+}
+.pure-g-r .question hr {
   width: 96%;
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #DDD;
 }
-.pure-g .question h1 {
+.pure-g-r .question h1 {
   text-align: center;
   font-weight: 400;
 }
-.pure-g .question h2 {
+.pure-g-r .question h2 {
   font-weight: 300;
   text-align: center;
   text-shadow: none;
 }
-.pure-g .question #beautify {
+.pure-g-r .question #beautify {
   text-align: center;
-  margin: 0 2%;
   font-size: 125%;
 }
-.pure-g .question .link {
+.pure-g-r .question .link {
   text-decoration: none;
   color: #3B8FD0;
 }
-.pure-g .question .link:hover {
+.pure-g-r .question .link:hover {
   text-decoration: underline;
 }
-.pure-g .question #other-options {
+.pure-g-r .question #other-options {
   color: #888;
+  display: inline-block;
+  line-height: 2.5em;
+  margin: 0 2%;
+  width: 96%;
 }
-.pure-g .response {
-  background-color: #c0def5;
+.pure-g-r .response {
+  background-color: #ecf5fc;
   min-height: 100%;
 }
-.pure-g .response .fk-result.fine {
+.pure-g-r .response .fk-result.fine {
+  background-color: white;
+  height: 375px;
   margin: 7.5em 1.9em;
+  overflow: auto;
+  padding: 2% 0 0 2%;
 }
-.pure-g .response .fk-result .pure-table {
+.pure-g-r .response .fk-result .pure-table {
   border: none;
 }
-.pure-g .response .fk-result .pure-table thead {
+.pure-g-r .response .fk-result .pure-table thead {
   font-size: 1.25em;
   background-color: transparent;
 }
-.pure-g .response.hidden {
+.pure-g-r .response.hidden {
   display: none;
 }
-.pure-g .formatter {
+.pure-g-r .formatter {
   font-family: monospace;
   font-size: 1.1em;
 }
-.pure-g .formatter.formatter-string {
+.pure-g-r .formatter.formatter-string {
   color: red;
   font-weight: 400;
 }
-.pure-g .formatter.formatter-number {
+.pure-g-r .formatter.formatter-number {
   color: green;
 }
-.pure-g .formatter.formatter-boolean {
+.pure-g-r .formatter.formatter-boolean {
   color: purple;
 }
-.pure-g .formatter.formatter-null,
-.pure-g .formatter.formatter-undefined {
+.pure-g-r .formatter.formatter-null,
+.pure-g-r .formatter.formatter-undefined {
   color: purple;
 }

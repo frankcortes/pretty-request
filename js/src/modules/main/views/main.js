@@ -34,6 +34,8 @@
         if (this.model.has("params") && this.firstTimeUsed) {
           this.startAnimation();
           return this.firstTimeUsed = false;
+        } else if (!this.model.has("params") && this.model.has("content")) {
+          return this.errorFeedback();
         }
       };
 
@@ -47,12 +49,30 @@
       MainView.prototype.startAnimation = function() {
         if ($(".question").hasClass("pure-u-1")) {
           setInterval(function() {
-            return $(".response").removeClass("hidden");
+            $(".response").removeClass("hidden");
+            return $(".question").css("transition", "none");
           }, 2350);
           return setInterval(function() {
             return $(".question").removeClass("pure-u-1").addClass("pure-u-1-2");
           }, 300);
         }
+      };
+
+      MainView.prototype.errorFeedback = function() {
+        var $textarea;
+        $textarea = $(".question").find("textarea");
+        $textarea.addClass("error");
+        $textarea.attr("placeholder", "Please insert a valid request.");
+        $textarea.html("");
+        $textarea.trigger("focus");
+        return $textarea.one("keyup", this.removeErrorFeedback);
+      };
+
+      MainView.prototype.removeErrorFeedback = function() {
+        var $textarea;
+        $textarea = $(".question").find("textarea");
+        $textarea.removeClass("error");
+        return $textarea.attr("placeholder", "Enter a GET Request...");
       };
 
       MainView.prototype.beautifyTextarea = function(evt) {

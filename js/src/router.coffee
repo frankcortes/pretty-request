@@ -4,6 +4,7 @@ define(["Backbone", "modules/main/models/headerModel", "src/util/dataBeautifier"
 		routes: {
 			"example/:id": "generateRandomExample"
 		}
+		#with this function, we can return a random example to use.
 		generateRandomExample: ()->
 			content = exampleGenerator()
 			params = beautifier(content)

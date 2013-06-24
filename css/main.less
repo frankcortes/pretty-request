@@ -3,9 +3,9 @@ html, body
     height: 100%;
 }
 
-.pure-g{
+.pure-g-r{
 	//background-color: #F0F8FF;
-	background-color: lighten(#3B98E1,30%);
+	background-color: lighten(#3B98E1,40%);
 	height: 100%;
 	.question {
 		//Really nice animation!
@@ -29,6 +29,11 @@ html, body
 			max-height: 350px;
 			color: #AAA;
 			font-weight: lighter;
+			&.error {
+				background-color: #FFC0CB;
+				border: 1px solid #CD5C5C;
+				color: #CD5C5C;
+			}
 		}
 		hr {
 			width: 96%;
@@ -48,7 +53,6 @@ html, body
 		}
 		#beautify {
 			text-align: center;
-			margin: 0 2%;
 			font-size: 125%;
 		}
 		.link {
@@ -60,15 +64,24 @@ html, body
 		}
 		#other-options {
 			color: #888;
+			display: inline-block;
+			line-height: 2.5em;
+			margin: 0 2%;
+			width: 96%;
 		}
 	}
 	.response {
 		//background-color: #F0F8FF;
-		background-color: lighten(#3B98E1,30%);
+		background-color: lighten(#3B98E1,40%);
 		min-height: 100%;
 		.fk-result {
 			&.fine  {
-				 margin: 7.5em 1.9em;
+				margin: 7.5em 1.9em;
+				background-color: white;
+			    height: 375px;
+			    margin: 7.5em 1.9em;
+			    overflow: auto;
+			    padding: 2% 0 0 2%;
 			}
 			.pure-table {
 				border: none;

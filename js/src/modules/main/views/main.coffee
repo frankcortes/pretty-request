@@ -32,6 +32,9 @@ define(["Backbone",
 			if @model.has("params") and @firstTimeUsed
 				@startAnimation()
 				@firstTimeUsed = false
+			#if doesn't generate any params it means the content was incorrect.
+			else if not @model.has("params") and @model.has("content")
+				@errorFeedback()
 		#function to serialize the information sending to the view
 		serializeData: ()->
 			_.extend({}, @model.attributes, { "firstTimeUsed": @firstTimeUsed, "randomExample": @randomExample })
@@ -42,6 +45,8 @@ define(["Backbone",
 				setInterval(
 					()->
 						$(".response").removeClass("hidden")
+						#after first time, remove the transition
+						$(".question").css("transition","none")
 					2350 #2 seconds in the animation plus the retard to add and remove class
 				)
 				setInterval(
@@ -49,6 +54,19 @@ define(["Backbone",
 						$(".question").removeClass("pure-u-1").addClass("pure-u-1-2")
 					300
 				)
+		#Return feedback when an error is produced.
+		errorFeedback: ()->
+			$textarea = $(".question").find("textarea")
+			$textarea.addClass "error"
+			$textarea.attr("placeholder", "Please insert a valid request.")
+			$textarea.html ""
+			$textarea.trigger "focus"
+			$textarea.one("keyup", @removeErrorFeedback)
+		#Removes the error that produces an incorrect request.
+		removeErrorFeedback: ()->
+			$textarea = $(".question").find("textarea")
+			$textarea.removeClass "error"
+			$textarea.attr("placeholder", "Enter a GET Request...")
 		#...if you press the button, the content must be beautifier 
 		beautifyTextarea: (evt)->
 			content = $( "#textarea-request" ).val()

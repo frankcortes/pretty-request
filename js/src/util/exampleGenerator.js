@@ -23,9 +23,6 @@
         name: "text",
         possibles: ["A example of text.", "Another example of text.", "Yep, this is a text.", "Bye, bye ugly HTTP request.", "Now I'm happy with this."]
       }, {
-        name: "sex",
-        possibles: ["female", "male", "indiferent"]
-      }, {
         name: "job",
         possibles: ["Programmer", "Developer", "Designer", "Medieval Soldier", "Translator", "Product Manager", "Writter"]
       }, {
@@ -33,7 +30,7 @@
         possibles: ["Barcelona", "Badalona", "New Jersey", "London", "Oporto", "Brasilia", "New York", "San Francisco", "Palo Alto"]
       }
     ];
-    fixturesForUrls = ["http://example.com", "dev.example.org", "http://foo.com/get/people", "foo.bar.com", "http://example.org/set/person", ""];
+    fixturesForUrls = ["http://example.com", "dev.example.org", "http://foo.com/get/people", "foo.bar.com", "https://example.org/api/set/personal", ""];
     return exampleGenerator = function() {
       var example, randomKey, randomUrl;
       example = _.map(fixturesForParams, function(field) {
@@ -46,9 +43,10 @@
       });
       randomKey = Math.floor(Math.random() * fixturesForUrls.length);
       randomUrl = fixturesForUrls[randomKey];
-      return _.reduce(example, function(result, elem, key) {
+      example = _.reduce(example, function(result, elem, key) {
         return result + encodeURIComponent(elem.name) + "=" + encodeURIComponent(elem.value) + "&";
       }, randomUrl + "?");
+      return example = example.slice(0, -1);
     };
   });
 

@@ -1,4 +1,5 @@
 define(["underscore"], (_)->
+	#These fixtures generates several examples for parameters.
 	fixturesForParams = [
 		{
 			name: "name"
@@ -10,6 +11,7 @@ define(["underscore"], (_)->
 		}
 		{
 			name: "age"
+			#Creates a vector between 21 and 79
 			possibles: (( min, max )->
 				v = []
 				while min <= max
@@ -23,10 +25,6 @@ define(["underscore"], (_)->
 			possibles: [ "A example of text.", "Another example of text.", "Yep, this is a text.", "Bye, bye ugly HTTP request.", "Now I'm happy with this."]
 		}
 		{
-			name: "sex"
-			possibles: [ "female", "male", "indiferent" ]
-		}
-		{
 			name: "job"
 			possibles: [ "Programmer", "Developer", "Designer", "Medieval Soldier", "Translator", "Product Manager", "Writter" ]
 		}
@@ -36,15 +34,17 @@ define(["underscore"], (_)->
 		}
 	]
 
+	#These fixtures generates several examples for urls.
 	fixturesForUrls = [
 		"http://example.com"
 		"dev.example.org"
 		"http://foo.com/get/people"
 		"foo.bar.com"
-		"http://example.org/set/person"
+		"https://example.org/api/set/personal"
 		""
 	]
 
+	#This function returns a data to save in the model.
 	exampleGenerator = ()->
 		#obtain a concrete value for each parameter.
 		example = _.map( fixturesForParams, (field)->
@@ -54,13 +54,15 @@ define(["underscore"], (_)->
 				value: field.possibles[randomKey]
 			}
 		)
-
+		#Random url too
 		randomKey = Math.floor Math.random()*fixturesForUrls.length
 		randomUrl = fixturesForUrls[randomKey]
 
 		#convert into a get request and returns this.
-		_.reduce( example, (result, elem, key)->
+		example = _.reduce( example, (result, elem, key)->
 			result + encodeURIComponent(elem.name) + "=" + encodeURIComponent(elem.value) + "&"
 		, randomUrl + "?")
+		#removes the last "&"
+		example = example[..-2]
 
 )
